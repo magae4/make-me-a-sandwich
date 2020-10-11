@@ -1,0 +1,11 @@
+#!/bin/bash
+#Shows a sandwich image only if it is runned as superuser.
+#by Eder Martín
+
+if [ $EUID != 0 ]; then #Normal user case
+  echo "What? Make it yourself!"
+else #Superuser case
+  echo "Okay"
+  sleep 5 #The delay is only to "simulate" the preparation of the sandwich
+  xdg-open ./sandwich.jpg
+fi
